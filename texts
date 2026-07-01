@@ -1,0 +1,80 @@
+ihuriro/
+
+assets/
+    css/
+    js/
+    images/
+
+config/
+
+includes/
+
+auth/
+
+dashboard/
+
+products/
+
+profile/
+
+database/
+
+index.php
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+ihuriro/
+
+│
+
+├── assets/
+│      ├── css/
+│      ├── js/
+│      ├── images/
+│      └── icons/
+│
+
+├── config/
+│      database.php
+│      constants.php
+│
+
+├── includes/
+│      header.php
+│      footer.php
+│      navbar.php
+│      auth.php
+│
+
+├── auth/
+│      register.php
+│      login.php
+│      logout.php
+│
+
+├── dashboard/
+│      index.php
+│
+
+├── products/
+│      add.php
+│      edit.php
+│      delete.php
+│      list.php
+│      search.php
+│      details.php
+│
+
+├── profile/
+│      profile.php
+│      edit.php
+│
+
+├── uploads/
+│
+├── database/
+│      ihuriro.sql
+│
+└── index.php
