@@ -34,23 +34,17 @@ $displayName = !empty($_SESSION['username'])
 
 <!-- ================= HEADER ================= -->
 
-<header>
+<?php
+require_once '../includes/auth.php';
 
-    <div class="header-content">
+$pageTitle = "...";
 
-        <h1>IHURIRO</h1>
+require_once '../includes/header.php';
 
-        <a href="../auth/logout.php">
+require_once '../includes/navbar.php';
+?>
 
-            <i class="fa-solid fa-right-from-bracket"></i>
 
-            Sohoka
-
-        </a>
-
-    </div>
-
-</header>
 
 <!-- ================= MAIN ================= -->
 
@@ -165,52 +159,10 @@ $displayName = !empty($_SESSION['username'])
 </main>
 
 <!-- ============== FOOTER INFO ============== -->
-
-<div class="footer-info">
-
-    MUGISHA Ventures |
-    <strong>IHURIRO</strong> |
-    2026
-
-</div>
-
 <!-- ============== BOTTOM NAVIGATION ============== -->
 
-<footer>
+<?php require_once '../includes/footer.php'; ?>
 
-    <a href="index.php">
-
-        <i class="fa-solid fa-house"></i>
-
-        <span>Ahabanza</span>
-
-    </a>
-
-    <a href="../products/search.php">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <span>Isoko</span>
-
-    </a>
-
-    <a href="../products/add.php">
-
-        <i class="fa-solid fa-circle-plus"></i>
-
-        <span>Ongeraho</span>
-
-    </a>
-
-    <a href="../profile/profile.php">
-
-        <i class="fa-solid fa-user"></i>
-
-        <span>Profile</span>
-
-    </a>
-
-</footer>
 
 </body>
 
