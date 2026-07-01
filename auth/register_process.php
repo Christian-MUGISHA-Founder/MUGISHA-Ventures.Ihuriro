@@ -50,7 +50,7 @@ $_SESSION['old'] = [
     'phone' => $phone,
     'district' => $district,
     'sector' => $sector,
-    'cell' => $cell
+    'cell' => $cell,
     'address_description' => $addressDescription
 
 ];
@@ -221,7 +221,7 @@ $stmt->execute([
     ':district' => $district,
     ':sector' => $sector,
     ':cell' => $cell,
-    ':address_description' => $addressDescription,,
+    ':address_description' => $addressDescription,
     ':password' => $passwordHash
 
 ]);
