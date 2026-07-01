@@ -1,0 +1,125 @@
+/* =======================================
+   EDIT PROFILE
+======================================= */
+
+.edit-card{
+
+    background:#fff;
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+}
+
+.edit-card h2{
+
+    text-align:center;
+
+    color:#1565C0;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+.edit-card label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    margin-top:18px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.edit-card input,
+.edit-card textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:17px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.edit-card input:focus,
+.edit-card textarea:focus{
+
+    border-color:#1565C0;
+
+}
+
+.edit-card textarea{
+
+    resize:vertical;
+
+}
+
+.btn{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:16px;
+
+    background:#1565C0;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#0D47A1;
+
+}
+
+.btn i{
+
+    margin-right:8px;
+
+}
+
+@media (max-width:768px){
+
+    .edit-card{
+
+        margin:15px;
+
+        padding:20px;
+
+    }
+
+}

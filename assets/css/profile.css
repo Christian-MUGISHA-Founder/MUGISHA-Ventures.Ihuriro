@@ -1,0 +1,59 @@
+/* ==============================
+   PROFILE
+============================== */
+
+.card h2{
+
+    text-align:center;
+
+    color:#1565C0;
+
+    margin-bottom:25px;
+
+}
+
+.profile-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+.profile-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.label{
+
+    font-size:15px;
+
+    color:#777;
+
+    margin-bottom:6px;
+
+}
+
+.value{
+
+    font-size:19px;
+
+    font-weight:600;
+
+    color:#222;
+
+    word-break:break-word;
+
+}
+
+.btn{
+
+    margin-top:25px;
+
+}
