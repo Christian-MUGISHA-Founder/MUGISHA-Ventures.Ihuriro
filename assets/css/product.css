@@ -897,3 +897,212 @@
     }
 
 }
+
+/* ==========================================
+   PRODUCT DETAILS
+========================================== */
+
+.details-card{
+
+    max-width:750px;
+
+    margin:30px auto;
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+.details-card h2{
+
+    text-align:center;
+
+    color:#1565C0;
+
+    margin-bottom:30px;
+
+}
+
+.details-card h3{
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+    color:#1565C0;
+
+}
+
+.detail-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.detail-row .label{
+
+    font-weight:bold;
+
+    color:#333;
+
+    min-width:160px;
+
+}
+
+.detail-row span:last-child{
+
+    flex:1;
+
+    text-align:right;
+
+    word-break:break-word;
+
+}
+
+.detail-row a{
+
+    color:#1565C0;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.detail-row a:hover{
+
+    text-decoration:underline;
+
+}
+
+.details-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.details-actions a{
+
+    flex:1;
+
+    text-align:center;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:bold;
+
+}
+
+.back-btn{
+
+    background:#6c757d;
+
+}
+
+.back-btn:hover{
+
+    background:#545b62;
+
+}
+
+.details-actions .edit-btn{
+
+    background:#1565C0;
+
+}
+
+.details-actions .edit-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .detail-row{
+
+        flex-direction:column;
+
+        gap:5px;
+
+    }
+
+    .detail-row span:last-child{
+
+        text-align:left;
+
+    }
+
+    .details-actions{
+
+        flex-direction:column;
+
+    }
+
+}
+
+/* ==========================================
+   DETAILS BUTTON
+========================================== */
+
+.actions .details-btn{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:12px;
+
+    background:#17A2B8;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.actions .details-btn:hover{
+
+    background:#117A8B;
+
+}
+

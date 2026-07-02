@@ -258,25 +258,29 @@ Frw /
 
 <div class="actions">
 
-<a
+    <a
+        href="details.php?id=<?= $product['id'] ?>"
+        class="details-btn">
 
-href="edit.php?id=<?= $product['id'] ?>"
+        Reba byinshi...
 
-class="edit-btn">
+    </a>
 
-Hindura
+    <a
+        href="edit.php?id=<?= $product['id'] ?>"
+        class="edit-btn">
 
-</a>
+        Hindura
 
-<a
+    </a>
 
-href="delete.php?id=<?= $product['id'] ?>"
+    <a
+        href="delete.php?id=<?= $product['id'] ?>"
+        class="delete-btn">
 
-class="delete-btn">
+        Siba
 
-Siba
-
-</a>
+    </a>
 
 </div>
 
