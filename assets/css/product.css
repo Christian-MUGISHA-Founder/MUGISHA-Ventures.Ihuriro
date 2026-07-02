@@ -468,3 +468,185 @@
     }
 
 }
+
+    /* ===========================
+   DELETE PAGE
+=========================== */
+
+.delete-card{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.warning{
+
+    background:#FFF3CD;
+
+    color:#856404;
+
+    border:1px solid #FFE69C;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin:20px 0;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+.product-summary{
+
+    background:#F8F9FA;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+}
+
+.product-summary h3{
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+.product-summary p{
+
+    margin:10px 0;
+
+}
+
+.cancel-btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#6C757D;
+
+    color:#fff;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.cancel-btn:hover{
+
+    background:#5A6268;
+
+}
+/*.delete-btn {
+    display:block;
+
+    width:100%;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background: #b3050d;
+
+    border: 1px solid #b3050d;
+
+    cursor: pointer;
+
+    color:#fff;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+}*/
+
+/* =====================================
+   PRODUCT ACTION BUTTONS
+===================================== */
+
+.actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.actions .edit-btn,
+.actions .delete-btn{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:14px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:10px;
+
+    transition:0.3s;
+
+}
+
+/* Edit */
+
+.actions .edit-btn{
+
+    background:#1565C0;
+
+}
+
+.actions .edit-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+/* Delete */
+
+.actions .delete-btn{
+
+    background:#DC3545;
+
+}
+
+.actions .delete-btn:hover{
+
+    background:#B02A37;
+
+}

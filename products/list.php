@@ -125,7 +125,7 @@ require_once '../includes/header.php';
 require_once '../includes/navbar.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/product-list.css">
+<link rel="stylesheet" href="../assets/css/product.css">
 
 <main class="container">
 
@@ -191,7 +191,6 @@ value="<?= htmlspecialchars($keyword) ?>">
 
 <strong>Ingano:</strong>
 
-<?= $product['quantity'] ?>
 
 <?= number_format((float)$product['quantity'], 2) ?>
 
