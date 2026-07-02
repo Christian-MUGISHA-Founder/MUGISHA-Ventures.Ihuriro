@@ -1,0 +1,157 @@
+/* ===================================
+   PRODUCT FORM
+=================================== */
+
+.form-card{
+
+    background:#fff;
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.form-card h2{
+
+    text-align:center;
+
+    color:#1565C0;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+.form-card label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus{
+
+    border-color:#1565C0;
+
+}
+
+.form-card textarea{
+
+    resize:vertical;
+
+}
+
+.btn{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    background:#1565C0;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#0D47A1;
+
+}
+
+.btn i{
+
+    margin-right:8px;
+
+}
+
+/* Alerts */
+
+.alert{
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+}
+
+.error{
+
+    background:#fdeaea;
+
+    color:#c62828;
+
+    border:1px solid #ef9a9a;
+
+}
+
+.error p{
+
+    margin:6px 0;
+
+}
+
+@media(max-width:768px){
+
+    .form-card{
+
+        margin:15px;
+
+        padding:20px;
+
+    }
+
+}
