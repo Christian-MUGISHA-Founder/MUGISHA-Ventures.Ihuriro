@@ -209,6 +209,176 @@
 
 }
 
+.search-card{
+
+    background:#fff;
+
+    margin:20px auto;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.search-card h2{
+
+    color:#1565C0;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+    font-size:28px;
+
+}
+
+.search-description{
+
+    text-align:center;
+
+    color:#555;
+
+    margin-bottom:20px;
+
+}
+
+.search-card form{
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+.search-card .filter-row{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.search-card .filter-group{
+
+    flex:1;
+
+    min-width:180px;
+
+}
+
+.search-card .filter-group label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    color:#1565C0;
+
+}
+
+.search-card input,
+.search-card select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+.search-card input:focus,
+.search-card select:focus{
+
+    border-color:#1565C0;
+
+}
+
+.search-summary{
+
+    background:#eef6ff;
+
+    border:1px solid #cfe2ff;
+
+    color:#0d47a1;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    margin:20px 0;
+
+}
+
+.search-results{
+
+    display:grid;
+
+    gap:16px;
+
+    margin-top:20px;
+
+}
+
+.search-product-card{
+
+    margin-bottom:0;
+
+}
+
+.search-product-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.price-badge{
+
+    background:#1565C0;
+
+    color:#fff;
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+.seller-meta{
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
 /* =========================
    Success Message
 ========================= */
@@ -1106,3 +1276,150 @@
 
 }
 
+/* ==========================================
+   MARKET SEARCH
+========================================== */
+
+.search-card{
+
+    max-width:800px;
+
+    margin:25px auto;
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.search-card h2{
+
+    text-align:center;
+
+    color:#1565C0;
+
+    margin-bottom:10px;
+
+}
+
+.search-description{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.search-card input,
+.search-card select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #d6d6d6;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    box-sizing:border-box;
+
+}
+
+.search-card input:focus,
+.search-card select:focus{
+
+    border-color:#1565C0;
+
+    outline:none;
+
+    box-shadow:0 0 5px rgba(21,101,192,.20);
+
+}
+
+.search-results{
+
+    max-width:900px;
+
+    margin:30px auto;
+
+}
+
+.search-card .btn{
+
+    width:100%;
+
+}
+
+.empty{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.empty h3{
+
+    color:#1565C0;
+
+    margin-bottom:10px;
+
+}
+
+.empty p{
+
+    color:#666;
+
+}
+
+@media(max-width:768px){
+
+    .search-card{
+
+        margin:15px;
+
+        padding:20px;
+
+    }
+
+}
+
+/* ==========================================
+   SORT INFO
+========================================== */
+
+.sort-info{
+
+    max-width:900px;
+
+    margin:15px auto;
+
+    padding:12px 18px;
+
+    background:#E3F2FD;
+
+    border-left:5px solid #1565C0;
+
+    border-radius:8px;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}

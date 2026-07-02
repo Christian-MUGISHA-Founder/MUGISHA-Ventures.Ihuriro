@@ -3,10 +3,17 @@
 declare(strict_types=1);
 
 require_once '../includes/auth.php';
+require_once '../config/database.php';
 
 $displayName = !empty($_SESSION['username'])
     ? $_SESSION['username']
     : $_SESSION['full_name'];
+
+$userId = (int)$_SESSION['user_id'];
+
+$stmt = $pdo->prepare("SELECT id, product_name, unit_price, quantity, unit, discount, updated_at FROM products WHERE user_id = :user_id ORDER BY updated_at DESC LIMIT 5");
+$stmt->execute([':user_id' => $userId]);
+$userProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -74,38 +81,40 @@ require_once '../includes/navbar.php';
 
         <h3>Shakisha Ku Isoko</h3>
 
-        <form action="../products/search.php" method="GET">
+        <form action="../products/search.php" method="GET" class="search-form">
 
             <input
                 type="text"
                 name="keyword"
-                placeholder="Urugero: Isukari">
+                placeholder="Urugero: Isukari"
+                autocomplete="off">
+
+            <div class="filters">
+
+                <button class="filter" type="submit" name="near" value="district">
+
+                    Hafi Yanjye
+
+                </button>
+
+                <button class="filter" type="submit" name="sort" value="cheap">
+
+                    Igiciro Gito
+
+                </button>
+
+            </div>
 
             <button
-                class="btn"
+                class="btn search-btn"
                 type="submit">
 
+                <i class="fa-solid fa-magnifying-glass"></i>
                 Shaka
 
             </button>
 
         </form>
-
-        <div class="filters">
-
-            <button class="filter">
-
-                Hafi Yanjye
-
-            </button>
-
-            <button class="filter">
-
-                Igiciro Gito
-
-            </button>
-
-        </div>
 
     </section>
 
@@ -131,28 +140,62 @@ require_once '../includes/navbar.php';
 
         <h3>Ibicuruzwa Byanjye</h3>
 
-        <!-- Search own stock -->
-
-        <form action="../products/list.php" method="GET">
+        <form action="../products/list.php" method="GET" class="search-form">
 
             <input
                 type="text"
-                name="my_product"
-                placeholder="Shakisha mu bicuruzwa byawe">
+                name="search"
+                placeholder="Shakisha mu bicuruzwa byawe"
+                autocomplete="off">
+
+            <button class="btn search-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Shaka
+            </button>
 
         </form>
 
-        <div class="product">
+        <?php if (empty($userProducts)): ?>
 
-            <h4>Nta Gicuruzwa Kirashyirwaho</h4>
+            <div class="product">
 
-            <p>
+                <h4>Nta Gicuruzwa Kirashyirwaho</h4>
 
-                Ongeraho igicuruzwa cya mbere.
+                <p>
 
-            </p>
+                    Ongeraho igicuruzwa cya mbere.
 
-        </div>
+                </p>
+
+            </div>
+
+        <?php else: ?>
+
+            <?php foreach ($userProducts as $product): ?>
+
+                <div class="product">
+
+                    <h4><?= htmlspecialchars($product['product_name']) ?></h4>
+
+                    <p>
+                        <strong>Igiciro:</strong>
+                        <?= number_format((float)$product['unit_price'], 0) ?> Frw / <?= htmlspecialchars($product['unit']) ?>
+                    </p>
+
+                    <p>
+                        <strong>Ingano:</strong>
+                        <?= number_format((float)$product['quantity'], 2) ?> <?= htmlspecialchars($product['unit']) ?>
+                    </p>
+
+                    <p>
+                        <a href="../products/details.php?id=<?= (int)$product['id'] ?>" class="link-btn">Reba byinshi</a>
+                    </p>
+
+                </div>
+
+            <?php endforeach; ?>
+
+        <?php endif; ?>
 
     </section>
 

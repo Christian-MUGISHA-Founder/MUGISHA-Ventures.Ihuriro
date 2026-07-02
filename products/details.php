@@ -9,6 +9,7 @@ $pageTitle = "Ibisobanuro by'Igicuruzwa";
 $pageCSS = "../assets/css/product.css";
 
 $id = (int)($_GET['id'] ?? 0);
+$from = $_GET['from'] ?? '';
 
 if ($id <= 0) {
 
@@ -54,6 +55,8 @@ $stmt->execute([
 ]);
 
 $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$canEditProduct = $product && ((int)$product['user_id'] === (int)$_SESSION['user_id']);
 
 if(!$product){
 
@@ -215,11 +218,25 @@ Frw /
 
 <div class="details-actions">
 
+<?php if ($from === 'search'): ?>
+
+<a href="search.php" class="back-btn">
+
+← Garuka ku isoko
+
+</a>
+
+<?php else: ?>
+
 <a href="list.php" class="back-btn">
 
 ← Garuka
 
 </a>
+
+<?php endif; ?>
+
+<?php if ($canEditProduct): ?>
 
 <a
 
@@ -230,6 +247,8 @@ class="edit-btn">
 Hindura
 
 </a>
+
+<?php endif; ?>
 
 </div>
 

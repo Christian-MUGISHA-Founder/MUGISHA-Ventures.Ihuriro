@@ -78,3 +78,114 @@ ihuriro/
 │      ihuriro.sql
 │
 └── index.php
+
+
+
+Phase 1 — Search Page Structure
+✅ Authentication
+✅ Header/Navbar/Footer
+✅ Page title
+✅ Search form
+✅ Filter form
+✅ Empty results section
+Phase 2 — Search Backend
+Search by product name
+Search by trader name
+Search by district
+Search by sector
+Search by cell
+Search by description
+Phase 3 — Sorting
+Cheapest first
+Most expensive first
+Recently updated
+Alphabetical
+Phase 4 — Nearby Filter (MVP)
+
+Using
+
+District
+
+↓
+
+Sector
+
+↓
+
+Cell
+
+Later we can upgrade to GPS.
+
+Phase 5 — Result Cards
+
+Each result card will show
+
+Product
+
+Price
+
+Quantity
+
+Trader
+
+District
+
+Sector
+
+Cell
+
+Call
+
+Reba byinshi
+Phase 6 — Pagination
+1 2 3 4 5 ...
+
+Exactly like list.php.
+
+Phase 7 — Empty State
+Nta bicuruzwa bibonetse.
+
+Gerageza gushakisha irindi zina.
+Phase 8 — CSS
+
+We'll build product.css gradually:
+
+Search Container
+
+↓
+
+Search Form
+
+↓
+
+Filter Bar
+
+↓
+
+Result Cards
+
+↓
+
+Buttons
+
+↓
+
+Pagination
+
+↓
+
+Responsive
+
+Exactly how we built Product CRUD.
+
+Git Discipline
+
+After every completed feature:
+
+git status
+
+git add .
+
+git commit -m "Implement market search form"
+
+git push origin main
