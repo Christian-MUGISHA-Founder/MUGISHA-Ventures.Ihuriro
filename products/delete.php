@@ -118,34 +118,34 @@ require_once '../includes/navbar.php';
         </div>
 
         <form action="delete_process.php" method="POST">
-
-            <input
-                type="hidden"
-                name="id"
-                value="<?= $product['id'] ?>">
-
             <div class="actions">
+                <input
+                    type="hidden"
+                    name="id"
+                    value="<?= $product['id'] ?>">
+
+                
                 <!-- Consistent to list.php delete button -->
-                    <a
-
-                    href="delete.php?id=<?= $product['id'] ?>"
-
+                <button
+                    type="submit"
                     class="delete-btn">
 
-                    Siba
+                    <i class="fa-solid fa-trash"></i>
 
-                    </a>
-                </div>
+                    Yego, Siba
+
+                </button>
+                
             
 
-            <a
-                href="list.php"
-                class="cancel-btn">
+                <a
+                    href="list.php"
+                    class="cancel-btn">
 
-                Garuka
+                    Garuka
 
-            </a>
-
+                </a>
+            </div>
         </form>
 
     </section>

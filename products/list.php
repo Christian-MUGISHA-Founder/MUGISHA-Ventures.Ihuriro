@@ -177,6 +177,22 @@ value="<?= htmlspecialchars($keyword) ?>">
 
 <?php endif; ?>
 
+<!-- Add Product -->
+
+<section class="card">
+
+    <a
+        href="../products/add.php"
+        class="btn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        Ongeraho Igicuruzwa
+
+    </a>
+
+</section>
+
 <?php foreach($products as $product): ?>
 
 <section class="card product-card">
