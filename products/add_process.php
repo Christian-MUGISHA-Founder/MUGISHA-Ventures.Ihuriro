@@ -42,8 +42,8 @@ $product_name = trim($_POST['product_name'] ?? '');
 $unit_price = trim($_POST['unit_price'] ?? '');
 $quantity = trim($_POST['quantity'] ?? '');
 $unit = trim($_POST['unit'] ?? '');
-$discount_info = trim($_POST['discount_info'] ?? '');
-
+$discount = trim($_POST['discount'] ?? '0');
+$description = trim($_POST['description'] ?? '');
 $user_id = $_SESSION['user_id'];
 
 /*
@@ -94,6 +94,12 @@ if ($unit === '') {
 
 }
 
+if (!is_numeric($discount) || $discount < 0 || $discount > 100) {
+
+    $errors[] = "Discount igomba kuba hagati ya 0 na 100.";
+
+}
+
 /*
 |--------------------------------------------------------------------------
 | Stop If Validation Failed
@@ -125,9 +131,9 @@ INSERT INTO products
     unit_price,
     quantity,
     unit,
-    discount_info
+    discount,
+    description
 )
-
 VALUES
 (
     :user_id,
@@ -135,7 +141,8 @@ VALUES
     :unit_price,
     :quantity,
     :unit,
-    :discount_info
+    :discount,
+    :description
 )
 
 ";
@@ -143,6 +150,8 @@ VALUES
 $stmt = $pdo->prepare($sql);
 
 $stmt->execute([
+
+   
 
     ':user_id' => $user_id,
 
@@ -154,7 +163,11 @@ $stmt->execute([
 
     ':unit' => $unit,
 
-    ':discount_info' => $discount_info
+    ':discount' => $discount,
+
+    ':description' => $description
+
+
 
 ]);
 

@@ -94,6 +94,23 @@ require_once '../includes/navbar.php';
 
             </select>
 
+            <label>Discount (%)</label>
+
+            <input
+                type="number"
+                name="discount"
+                min="0"
+                max="100"
+                step="0.01"
+                value="<?= htmlspecialchars($_SESSION['old']['discount'] ?? '0') ?>">
+
+            <label>Ibisobanuro (Si ngombwa)</label>
+
+            <textarea
+                name="description"
+                rows="4"
+                placeholder="Andika ibisobanuro by'igicuruzwa..."><?= htmlspecialchars($_SESSION['old']['description'] ?? '') ?></textarea>
+
             <label>Amakuru ya Discount (Si ngombwa)</label>
 
             <textarea

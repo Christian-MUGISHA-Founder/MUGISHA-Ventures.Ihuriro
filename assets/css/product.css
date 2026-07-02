@@ -155,3 +155,316 @@
     }
 
 }
+
+/* =====================================================
+   IHURIRO PRODUCTS
+   Mobile First
+===================================================== */
+
+/* =========================
+   Page Title
+========================= */
+
+.card h2{
+
+    color:#1565C0;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:28px;
+
+}
+
+/* =========================
+   Search
+========================= */
+
+.card form{
+
+    width:100%;
+
+}
+
+.card input[type="text"]{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    outline:none;
+
+}
+
+.card input[type="text"]:focus{
+
+    border-color:#1565C0;
+
+}
+
+/* =========================
+   Success Message
+========================= */
+
+.success{
+
+    background:#d4edda;
+
+    color:#155724;
+
+    border:1px solid #c3e6cb;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin:15px 0;
+
+    font-size:16px;
+
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.empty{
+
+    text-align:center;
+
+}
+
+.empty h3{
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+.empty p{
+
+    margin-bottom:20px;
+
+}
+
+/* =========================
+   Product Card
+========================= */
+
+.product-card{
+
+    margin-bottom:20px;
+
+    border-left:6px solid #1565C0;
+
+}
+
+.product-card h3{
+
+    color:#1565C0;
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+}
+
+.product-card p{
+
+    margin:10px 0;
+
+    line-height:1.6;
+
+    font-size:17px;
+
+}
+
+.product-card strong{
+
+    color:#444;
+
+}
+
+/* =========================
+   Action Buttons
+========================= */
+
+.actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.actions a{
+
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.edit-btn{
+
+    background:#1565C0;
+
+}
+
+.edit-btn:hover{
+
+    background:#0D47A1;
+
+}
+
+.delete-btn{
+
+    background:#dc3545;
+
+}
+
+.delete-btn:hover{
+
+    background:#b71c1c;
+
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#1565C0;
+
+    color:#fff;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#0D47A1;
+
+}
+
+/* =========================
+   Pagination
+========================= */
+
+.pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:30px 0;
+
+}
+
+.pagination a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    background:#fff;
+
+    color:#1565C0;
+
+    border:1px solid #1565C0;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.pagination a:hover{
+
+    background:#1565C0;
+
+    color:#fff;
+
+}
+
+.pagination a.active{
+
+    background:#1565C0;
+
+    color:#fff;
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (min-width:768px){
+
+    .product-card{
+
+        padding:25px;
+
+    }
+
+}
