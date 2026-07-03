@@ -22,8 +22,8 @@ define('BASE_URL', 'http://localhost/ihuriro');
 |--------------------------------------------------------------------------
 */
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'ihuriro_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'sql304.infinityfree.com');
+define('DB_NAME', 'if0_42327085_ihuriro_db');
+define('DB_USER', 'if0_42327085');
+define('DB_PASS', 'mugi2008chriss');
 ?>
