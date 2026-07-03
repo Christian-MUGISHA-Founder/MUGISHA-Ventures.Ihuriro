@@ -110,7 +110,7 @@ if (!in_array($unit, $allowedUnits, true)) {
 
 if (!is_numeric($discount) || (float)$discount < 0 || (float)$discount > 100) {
 
-    $errors[] = "Discount igomba kuba hagati ya 0 na 100.";
+    $errors[] = "Poromosiyo igomba kuba hagati ya 0 na 100.";
 
 }
 

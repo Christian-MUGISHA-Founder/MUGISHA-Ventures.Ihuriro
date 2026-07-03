@@ -95,7 +95,7 @@ require_once '../includes/navbar.php';
 
                 <p>
 
-                    <strong>Discount:</strong>
+                    <strong>Poromosiyo:</strong>
 
                     <?= htmlspecialchars($product['discount']) ?>%
 

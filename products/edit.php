@@ -177,7 +177,7 @@ require_once '../includes/navbar.php';
 
             </select>
 
-            <label>Discount (%)</label>
+            <label>Poromosiyo (%)</label>
 
             <input
                 type="number"

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,28 @@ declare(strict_types=1);
 
         <h2>Funguza Konti</h2>
 
+        <?php if (isset($_SESSION['success'])): ?>
+
+            <div class="alert success">
+                <?= htmlspecialchars($_SESSION['success']) ?>
+            </div>
+
+            <?php unset($_SESSION['success']); ?>
+
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['errors'])): ?>
+
+            <div class="alert error">
+                <?php foreach ($_SESSION['errors'] as $error): ?>
+                    <p><?= htmlspecialchars($error) ?></p>
+                <?php endforeach; ?>
+            </div>
+
+            <?php unset($_SESSION['errors']); ?>
+
+        <?php endif; ?>
+
         <form action="register_process.php"
               method="POST">
 
@@ -41,6 +64,7 @@ declare(strict_types=1);
                     type="text"
                     name="full_name"
                     placeholder="Andika amazina yose"
+                    value="<?= htmlspecialchars($_SESSION['old']['full_name'] ?? '') ?>"
                     required>
 
             </div>
@@ -52,7 +76,8 @@ declare(strict_types=1);
                 <input
                     type="text"
                     name="username"
-                    placeholder="Urugero: Mugisha Store">
+                    placeholder="Urugero: Mugisha Store"
+                    value="<?= htmlspecialchars($_SESSION['old']['username'] ?? '') ?>">
 
             </div>
 
@@ -64,6 +89,7 @@ declare(strict_types=1);
                     type="email"
                     name="email"
                     placeholder="example@email.com"
+                    value="<?= htmlspecialchars($_SESSION['old']['email'] ?? '') ?>"
                     required>
 
             </div>
@@ -76,6 +102,7 @@ declare(strict_types=1);
                     type="tel"
                     name="phone"
                     placeholder="078XXXXXXX"
+                    value="<?= htmlspecialchars($_SESSION['old']['phone'] ?? '') ?>"
                     required>
 
             </div>
@@ -87,6 +114,7 @@ declare(strict_types=1);
                 <input
                     type="text"
                     name="district"
+                    value="<?= htmlspecialchars($_SESSION['old']['district'] ?? '') ?>"
                     required>
 
             </div>
@@ -98,6 +126,7 @@ declare(strict_types=1);
                 <input
                     type="text"
                     name="sector"
+                    value="<?= htmlspecialchars($_SESSION['old']['sector'] ?? '') ?>"
                     required>
 
             </div>
@@ -109,6 +138,7 @@ declare(strict_types=1);
                 <input
                     type="text"
                     name="cell"
+                    value="<?= htmlspecialchars($_SESSION['old']['cell'] ?? '') ?>"
                     required>
 
             </div>

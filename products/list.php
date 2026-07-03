@@ -133,7 +133,7 @@ require_once '../includes/navbar.php';
 
 <h2>Ibicuruzwa Byanjye</h2>
 
-<form method="GET">
+<form method="GET" class="list-search-form">
 
 <input
 
@@ -144,6 +144,8 @@ name="search"
 placeholder="Shakisha igicuruzwa..."
 
 value="<?= htmlspecialchars($keyword) ?>">
+
+<button type="submit" class="btn">🔍 Shakisha</button>
 
 </form>
 
@@ -175,9 +177,7 @@ value="<?= htmlspecialchars($keyword) ?>">
 
 </section>
 
-<?php endif; ?>
-
-<!-- Add Product -->
+<?php else: ?>
 
 <section class="card">
 
@@ -192,6 +192,8 @@ value="<?= htmlspecialchars($keyword) ?>">
     </a>
 
 </section>
+
+<?php endif; ?>
 
 <?php foreach($products as $product): ?>
 
@@ -228,7 +230,7 @@ Frw /
 
 <p>
 
-<strong>Discount:</strong>
+<strong>Poromosiyo:</strong>
 
 <?= $product['discount'] ?> %
 

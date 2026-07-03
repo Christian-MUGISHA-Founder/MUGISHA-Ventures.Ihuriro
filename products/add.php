@@ -94,7 +94,7 @@ require_once '../includes/navbar.php';
 
             </select>
 
-            <label>Discount (%)</label>
+            <label>Poromosiyo (%)</label>
 
             <input
                 type="number"
@@ -111,7 +111,7 @@ require_once '../includes/navbar.php';
                 rows="4"
                 placeholder="Andika ibisobanuro by'igicuruzwa..."><?= htmlspecialchars($_SESSION['old']['description'] ?? '') ?></textarea>
 
-            <label>Amakuru ya Discount (Si ngombwa)</label>
+            <label>Amakuru ya Poromosiyo (Si ngombwa)</label>
 
             <textarea
                 name="discount_info"

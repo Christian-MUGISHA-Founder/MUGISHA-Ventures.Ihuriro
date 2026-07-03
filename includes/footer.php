@@ -6,13 +6,7 @@ $currentDir = basename(dirname($_SERVER['PHP_SELF'] ?? 'dashboard/index.php'));
 $activePage = 'dashboard';
 
 if ($currentDir === 'products') {
-    if ($currentFile === 'add.php' || $currentFile === 'add_process.php') {
-        $activePage = 'add';
-    } elseif ($currentFile === 'list.php' || $currentFile === 'details.php' || $currentFile === 'edit.php') {
-        $activePage = 'stock';
-    } else {
-        $activePage = 'search';
-    }
+    $activePage = ($currentFile === 'add.php' || $currentFile === 'add_process.php') ? 'add' : 'search';
 } elseif ($currentDir === 'profile') {
     $activePage = 'profile';
 }
@@ -42,14 +36,6 @@ if ($currentDir === 'products') {
         <i class="fa-solid fa-circle-plus"></i>
 
         <span>Ongeraho</span>
-
-    </a>
-
-    <a href="../products/list.php" class="footer-link <?= $activePage === 'stock' ? 'active' : '' ?>">
-
-        <i class="fa-solid fa-boxes-stacked"></i>
-
-        <span>Ububiko</span>
 
     </a>
 
