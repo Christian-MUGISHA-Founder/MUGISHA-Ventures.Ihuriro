@@ -19,6 +19,9 @@ $pageTitle = $pageTitle ?? 'Ihuriro';
 
     <title><?= htmlspecialchars($pageTitle) ?></title>
 
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="shortcut icon" href="../assets/icons/favicon.svg">
+
     <!-- Global CSS -->
 
     <link rel="stylesheet"

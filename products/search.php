@@ -17,26 +17,43 @@ $offset = ($page - 1) * $perPage;
 
 $params = [];
 $where = " WHERE 1=1 ";
+$searchTerms = [];
 
 if ($keyword !== '') {
-    $where .= "
-        AND (
-            p.product_name LIKE :k1
-            OR u.username LIKE :k2
-            OR u.district LIKE :k3
-            OR u.sector LIKE :k4
-            OR u.cell LIKE :k5
-            OR p.description LIKE :k6
-        )
-    ";
+    $searchTerms = preg_split('/\s+/', trim($keyword)) ?: [];
+    $searchTerms = array_values(array_filter($searchTerms, static function ($word) {
+        return mb_strlen(trim($word)) >= 2;
+    }));
+}
 
-    $searchValue = "%{$keyword}%";
-    $params[':k1'] = $searchValue;
-    $params[':k2'] = $searchValue;
-    $params[':k3'] = $searchValue;
-    $params[':k4'] = $searchValue;
-    $params[':k5'] = $searchValue;
-    $params[':k6'] = $searchValue;
+if (!empty($searchTerms)) {
+    $searchClauses = [];
+
+    foreach ($searchTerms as $termIndex => $keywordPart) {
+        $likeValue = "%{$keywordPart}%";
+
+        $searchClauses[] = "(
+            p.product_name LIKE :kw_product_name_{$termIndex}
+            OR p.description LIKE :kw_description_{$termIndex}
+            OR u.username LIKE :kw_username_{$termIndex}
+            OR u.full_name LIKE :kw_full_name_{$termIndex}
+            OR u.district LIKE :kw_district_{$termIndex}
+            OR u.sector LIKE :kw_sector_{$termIndex}
+            OR u.cell LIKE :kw_cell_{$termIndex}
+        )";
+
+        $params[":kw_product_name_{$termIndex}"] = $likeValue;
+        $params[":kw_description_{$termIndex}"] = $likeValue;
+        $params[":kw_username_{$termIndex}"] = $likeValue;
+        $params[":kw_full_name_{$termIndex}"] = $likeValue;
+        $params[":kw_district_{$termIndex}"] = $likeValue;
+        $params[":kw_sector_{$termIndex}"] = $likeValue;
+        $params[":kw_cell_{$termIndex}"] = $likeValue;
+    }
+
+    if (!empty($searchClauses)) {
+        $where .= ' AND (' . implode(' OR ', $searchClauses) . ')';
+    }
 }
 
 $where .= " AND p.user_id != :current_user ";
@@ -105,14 +122,54 @@ $sql = "
     FROM products p
     JOIN users u ON p.user_id = u.id
     {$where}
-    {$orderBy}
-    LIMIT {$perPage}
-    OFFSET {$offset}
 ";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (!empty($searchTerms)) {
+    $rankedProducts = [];
+
+    foreach ($products as $product) {
+        $score = 0;
+        $haystack = mb_strtolower(trim(($product['product_name'] ?? '') . ' ' . ($product['description'] ?? '') . ' ' . ($product['username'] ?? '') . ' ' . ($product['full_name'] ?? '') . ' ' . ($product['district'] ?? '') . ' ' . ($product['sector'] ?? '') . ' ' . ($product['cell'] ?? '')));
+
+        foreach ($searchTerms as $term) {
+            $termLower = mb_strtolower($term);
+            $score += mb_substr_count($haystack, $termLower) * 3;
+
+            if (mb_strpos($haystack, $termLower) !== false) {
+                $score += 2;
+            }
+
+            if (mb_stripos($product['description'] ?? '', $termLower) !== false) {
+                $score += 4;
+            }
+        }
+
+        if ($score > 0) {
+            $rankedProducts[] = ['product' => $product, 'score' => $score];
+        }
+    }
+
+    usort($rankedProducts, static function ($a, $b) {
+        if ($a['score'] === $b['score']) {
+            return 0;
+        }
+        return $a['score'] > $b['score'] ? -1 : 1;
+    });
+
+    $products = array_slice(array_map(static function ($item) {
+        return $item['product'];
+    }, $rankedProducts), 0, $perPage);
+} else {
+    usort($products, static function ($a, $b) {
+        return strtotime($b['updated_at'] ?? 0) <=> strtotime($a['updated_at'] ?? 0);
+    });
+}
+
+$products = array_slice($products, $offset, $perPage);
 
 $hasActiveSearch = $keyword !== '' || $sort !== '' || $near !== '';
 $showFullPagination = $hasActiveSearch || $totalPages <= 5;
